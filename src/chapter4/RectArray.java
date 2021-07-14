@@ -3,6 +3,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 //4개의 사각형을 입력받아 배열에 저장후 4개의 사각형 면접의 합을 구한다.
+
 class Rect{
    private int width, height;
    public Rect(int width, int height) {

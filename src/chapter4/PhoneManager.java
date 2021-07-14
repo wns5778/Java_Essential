@@ -1,52 +1,47 @@
 package chapter4;
 import java.util.Scanner;
 
-class phone{
+//이름 전화번호 필드를 생성하여 검색한 이름의 번호를 찾아 출력
+
+class Phone2 {
 	String name;
 	String tel;
-	phone(String name, String tel) {
-	      this.name = name;
-	      this.tel = tel;
-	   }
-	String getName() {
-		return name;
+
+	public Phone2(String name, String tel) {
+		this.name = name;
+		this.tel = tel;
 	}
-	String getTel() {
-		return tel;
-	}
+	public String getName() {return name;}
+	public String getTel() {return tel;}
 }
 
 public class PhoneManager {
+	public static void main(String[] args) {
+		System.out.print("인원수 >> ");
+		Scanner scanner = new Scanner(System.in);
+		int n = scanner.nextInt();
+		Phone2[] ph = new Phone2[n];
 
-   public static void main(String[] args) {
-   
-      Scanner scanner = new Scanner(System.in);
-      System.out.print("인원수>>");
-      int count = scanner.nextInt();
-      
-      phone[] person = new phone[count];
-      
-      for(int i=0; i<count;i++) {
-         System.out.print("이름과 전화번호(번호는 연속적으로 입력)>>>");
-         person[i] = new phone(scanner.next(),scanner.next());
-      }
-      System.out.println("저장되었습니다...");
-      
-      while(true) {
-    	  System.out.print("검색할 이름>>");
-    	  String searchname = scanner.next();
-    	  
-    	  for(int i=0;i<count;i++) {
-    		  if(searchname.equals("exit"))
-    			  System.exit(1);
-    		  else if(searchname.equals(person[i].name)) {
-    			  System.out.println(person[i].getName()+"의 번호는"+person[i].getTel());
-    			  break;
-    		  }
-    		  else if(!searchname.equals(person[i].name) && i ==(count-1))
-    			  System.out.println(searchname+"는 없습니다.");
-    	  }
-      
-   }
-}
+		for (int i = 0; i < n; i++) {
+			System.out.print("이름과 전화번호(번호는 연속적으로 입력) >> ");
+			ph[i] = new Phone2(scanner.next(), scanner.next());
+		}
+		System.out.println("저장되었습니다");
+		
+		while (true) {
+			System.out.print("검색할 이름 >> ");
+			String string = scanner.next();
+			if (string.equals("exit"))
+				break; 
+			for (int i = 0; i < n; i++) {
+			if (string.equals(ph[i].name)) {
+			System.out.println(string + "의 번호는 " + ph[i].tel + "입니다.");
+			break;
+			}
+			if(i==n-1)
+			System.out.println(string + "이 없습니다. ");	
+			}
+		}
+		scanner.close();
+	}
 }

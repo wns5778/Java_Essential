@@ -1,29 +1,28 @@
 package chapter4;
 import java.util.Scanner;
 
-public class phone{
-   private String name, tel;
-   public phone(String name, String tel) {
-      this.name = name;
-      this.tel = tel;
-   }
-   public String getName() {return name;}
-   public String getTel() {return tel;}
-   
+//2개의 이름과 전화번호를 입력받아 Phone객체 생성하여 출력
 
-   public static void main(String[] args) {
-      // TODO Auto-generated method stub
-      Scanner scanner = new Scanner(System.in);
-
-      System.out.print("이름과 전화번호 입력");
-      phone person1 = new phone(scanner.next(),scanner.next());
-      System.out.print("이름과 전화번호 입력");
-      phone person2 = new phone(scanner.next(),scanner.next());
-     
-      System.out.println(person1.name+"의 번호"+person1.tel);
-      System.out.println(person2.name+"의 번호"+person2.tel);
-
-      
-   }
-
+public class Phone {
+	private String name;
+	private String tel;
+	public Phone(String name, String tel){
+		this.name = name;
+		this.tel = tel;
+	}
+	public String getName() {return name;}
+	public String getTel() {return tel;}
+	
+	public static void main(String[] args){
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("이름과 전화번호 입력>>");
+		Phone phone1 = new Phone(scanner.next(), scanner.next());
+		System.out.print("이름과 전화번호 입력>>");
+		Phone phone2 = new Phone(scanner.next(),scanner.next());
+		System.out.println(phone1.getName() + "의 번호 " + phone1.getTel());
+		System.out.println(phone2.getName() + "의 번호 " + phone2.getTel());
+		scanner.close();	
+		
+		
+	}
 }
