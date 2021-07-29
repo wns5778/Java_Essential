@@ -1,6 +1,6 @@
 package chapter6;
 
-//1에서 3까지 난수 3개 생성뒤 3개가 같은수가 나올때까지 반복, 성공하면 "성공"출력
+//1에서 3까지 난수 3개 생Z성뒤 3개가 같은수가 나올때까지 반복, 성공하면 "성공"출력
 
 public class chapter6_RandomNumber {
 
